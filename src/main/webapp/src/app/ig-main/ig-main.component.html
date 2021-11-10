@@ -1,0 +1,24 @@
+<form [formGroup] = "igForm">
+  <div>
+    <label for="username">
+      Username
+    </label>
+    <input id="username" type="text" formControlName="username">
+    <label for="uploadDate">
+      Upload Date
+    </label>
+    <input id="uploadDate" type="date" formControlName="uploadDate">
+    <label for="uploadType">
+      Upload Type
+      <select id="uploadType" formControlName="uploadType" class="form-control">
+        <option disabled> Upload Type </option>
+        <option>Choose upload list type</option>
+        <option *ngFor="let type of uploadTypeList">{{type}}</option>
+      </select>
+    </label>
+  </div>
+
+</form>
+<app-file-upload [isFormValid]="igForm.valid" [httpParams]="buildFormHeader()"></app-file-upload>
+<br><hr>
+<app-compare-data></app-compare-data>
