@@ -1,15 +1,16 @@
-input {
+mat-input {
   display: in-line;
-  width: 25%;
+  width: 33%;
   padding: .5rem;
   margin: 1rem 0;
   box-sizing: border-box;
 }
 
-select {
+mat-form-field {
   display: in-line;
-  width: 25%;
+  width: 33%;
   padding: .5rem;
   margin: 1rem 0;
   box-sizing: border-box;
 }
+

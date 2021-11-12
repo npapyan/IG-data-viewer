@@ -58,19 +58,49 @@
 
 <br><br>
 
-<div>
-  <mat-selection-list class="igUsers">
-    <h3 *ngIf = "userList1.length > 0">Upload List 1</h3>
-    <mat-list-item *ngFor="let user1 of userList1; let i = index;">
-      <span class="badge">{{i+1}}</span>{{user1.username}} : {{user1.name}}
-    </mat-list-item>
-  </mat-selection-list>
-  <mat-selection-list class="igUsers">
-    <h3 *ngIf = "userList2.length > 0">Upload List 2</h3>
-    <mat-list-item *ngFor="let user2 of userList2; let j = index;">
-      <span class="badge">{{j+1}}</span>{{user2.username}} : {{user2.name}}
-    </mat-list-item>
-  </mat-selection-list>
-</div>
+<mat-tab-group>
+  <mat-tab label="List 1">
+  <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+    </ng-container>
 
-<!--<app-result-list [displayList]="comparedList"></app-result-list>-->
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef>Username</th>
+      <td mat-cell *matCellDef="let element"> {{ element.username }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnDefs"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnDefs;"></tr>
+
+  </table>
+    <mat-paginator #paginator1 [pageSize]="10" [pageSizeOptions]="[10, 15, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of users">
+    </mat-paginator>
+  </mat-tab>
+
+  <mat-tab label="List 2">
+  <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef>Username</th>
+      <td mat-cell *matCellDef="let element"> {{ element.username }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnDefs"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnDefs;"></tr>
+
+  </table>
+    <mat-paginator #paginator2 [pageSize]="10" [pageSizeOptions]="[10, 15, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of users">
+    </mat-paginator>
+  </mat-tab>
+
+</mat-tab-group>

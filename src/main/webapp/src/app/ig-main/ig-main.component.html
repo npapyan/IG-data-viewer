@@ -1,21 +1,23 @@
 <form [formGroup] = "igForm">
   <div>
-    <label for="username">
-      Username
-    </label>
-    <input id="username" type="text" formControlName="username">
-    <label for="uploadDate">
-      Upload Date
-    </label>
-    <input id="uploadDate" type="date" formControlName="uploadDate">
-    <label for="uploadType">
-      Upload Type
-      <select id="uploadType" formControlName="uploadType" class="form-control">
-        <option disabled> Upload Type </option>
-        <option>Choose upload list type</option>
-        <option *ngFor="let type of uploadTypeList">{{type}}</option>
-      </select>
-    </label>
+
+    <mat-form-field appearance="fill">
+      <mat-label> Username </mat-label>
+      <input matInput id="username" type="text" formControlName="username">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label> Upload Date </mat-label>
+      <input matInput id="uploadDate" type="date" formControlName="uploadDate">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label> Upload Type </mat-label>
+      <mat-select id="uploadType" formControlName="uploadType" class="form-control" placeholder="Upload Type">
+        <mat-option>Choose upload list type</mat-option>
+        <mat-option value="type.value" *ngFor="let type of uploadTypeList">{{type}}</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
 
 </form>
