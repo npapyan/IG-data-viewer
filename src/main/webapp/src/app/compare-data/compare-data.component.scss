@@ -27,6 +27,21 @@ mat-selection-list {
     overflow: auto;
 }
 
+mat-input {
+  display: in-line;
+  width: 33%;
+  padding: .5rem;
+  margin: 1rem 0;
+  box-sizing: border-box;
+}
+
+mat-form-field {
+  display: in-line;
+  width: 33%;
+  padding: .5rem;
+  margin: 1rem 0;
+  box-sizing: border-box;
+}
 
 table {
     vertical-align: top;

@@ -17,14 +17,14 @@
           <option *ngFor="let type of uploadTypeList">{{type}}</option>
         </select>
       </label>
-      <label for="selectList1">
-        Upload List 1
-        <select (change)="onListChange1($event)" id="selectList1" formControlName="selectList1" class="form-control">
-          <option disabled> Upload List </option>
-          <option>Choose list</option>
-          <option *ngFor="let list of uploadList1">{{list.uploadDate}} | {{list.followingList === true ? 'Following List' : 'Follower List'}} | {{list.id}}</option>
-        </select>
-      </label>
+
+      <mat-form-field appearance="fill">
+        <mat-label> Upload List 1 </mat-label>
+        <mat-select (selectionChange)="onListChange1($event)" id="selectList1" formControlName="selectList1" class="form-control" placeholder="Upload List">
+          <mat-option>Choose list</mat-option>
+          <mat-option [value]="list.id" *ngFor="let list of uploadList1">{{list.uploadDate}} | {{list.listType === 'Following' ? 'Following List' : 'Follower List'}} | {{list.id}}</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
     <div>
       <label for="uploadDate2">
@@ -39,14 +39,14 @@
           <option *ngFor="let type of uploadTypeList">{{type}}</option>
         </select>
       </label>
-      <label for="selectList2">
-        Upload List 2
-        <select (change)="onListChange2($event)" id="selectList2" formControlName="selectList2" class="form-control">
-          <option disabled> Upload List </option>
-          <option>Choose list</option>
-                    <option *ngFor="let list of uploadList2">{{list.uploadDate}} | {{list.followingList === true ? 'Following List' : 'Follower List'}} | {{list.id}}</option>
-        </select>
-      </label>
+
+      <mat-form-field appearance="fill">
+        <mat-label> Upload List 2 </mat-label>
+        <mat-select (selectionChange)="onListChange2($event)" id="selectList2" formControlName="selectList2" class="form-control" placeholder="Upload List" value="list.id">
+          <mat-option>Choose list</mat-option>
+          <mat-option *ngFor="let list of uploadList2" [value]="list.id">{{list.uploadDate}} | {{list.listType === 'Following' ? 'Following List' : 'Follower List'}} | {{list.id}}</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
   </div>
 
