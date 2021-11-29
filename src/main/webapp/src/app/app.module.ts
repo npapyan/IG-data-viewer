@@ -20,6 +20,7 @@ import { ResultListComponent } from './result-list/result-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HelpComponent } from './help/help.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FileUploadComponent,
     IgMainComponent,
     CompareDataComponent,
-    ResultListComponent
+    ResultListComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,

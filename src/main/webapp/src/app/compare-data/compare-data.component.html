@@ -1,11 +1,11 @@
 <form [formGroup] = "igDataCompare">
   <div>
-    <label for="username">
+<!--    <label for="username">
       Username
     </label>
-    <input id="username" type="text" formControlName="username">
-    <div>
-      <label for="uploadDate1">
+    <input id="username" type="text" formControlName="username">-->
+<!--    <div>-->
+<!--      <label for="uploadDate1">
         Upload Date 1
       </label>
       <input id="uploadDate1" type="date" formControlName="uploadDate1">
@@ -16,7 +16,7 @@
           <option>Choose upload list type</option>
           <option *ngFor="let type of uploadTypeList">{{type}}</option>
         </select>
-      </label>
+      </label>-->
 
       <mat-form-field appearance="fill">
         <mat-label> Upload List 1 </mat-label>
@@ -25,9 +25,9 @@
           <mat-option [value]="list.id" *ngFor="let list of uploadList1">{{list.uploadDate}} | {{list.listType === 'Following' ? 'Following List' : 'Follower List'}} | {{list.id}}</mat-option>
         </mat-select>
       </mat-form-field>
-    </div>
-    <div>
-      <label for="uploadDate2">
+<!--    </div>-->
+<!--    <div>-->
+<!--      <label for="uploadDate2">
         Upload Date 2
       </label>
       <input id="uploadDate2" type="date" formControlName="uploadDate2">
@@ -38,7 +38,7 @@
           <option>Choose upload list type</option>
           <option *ngFor="let type of uploadTypeList">{{type}}</option>
         </select>
-      </label>
+      </label>-->
 
       <mat-form-field appearance="fill">
         <mat-label> Upload List 2 </mat-label>
@@ -47,9 +47,8 @@
           <mat-option *ngFor="let list of uploadList2" [value]="list.id">{{list.uploadDate}} | {{list.listType === 'Following' ? 'Following List' : 'Follower List'}} | {{list.id}}</mat-option>
         </mat-select>
       </mat-form-field>
-    </div>
+<!--    </div>-->
   </div>
-
 </form>
 
 <button mat-raised-button color="primary" class="compare-btn" (click)="onCompareClick()" [disabled]="!igDataCompare.valid">
