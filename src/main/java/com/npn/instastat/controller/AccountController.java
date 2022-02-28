@@ -19,17 +19,14 @@ public class AccountController {
 
     @GetMapping(path = "/get-user-list")
     public @ResponseBody
-    List<Account> getUserListByUploadId(@RequestParam("uploadId") Integer uploadId,
-                                        @RequestParam("uploadType") String uploadType) {
-        return accountService.getUserListByUploadId(uploadId, uploadType);
+    List<Account> getUserListByUploadId(@RequestParam("uploadId") Integer uploadId) {
+        return accountService.getUserListByUploadId(uploadId);
     }
 
     @GetMapping(path = "/compare-lists")
     public @ResponseBody
     List<String> compareLists(@RequestParam("uploadId1") Integer uploadId1,
-                              @RequestParam("uploadType1") String uploadType1,
-                              @RequestParam("uploadId2") Integer uploadId2,
-                              @RequestParam("uploadType2") String uploadType2) {
-        return accountService.compareLists(uploadId1, uploadType1, uploadId2, uploadType2);
+                              @RequestParam("uploadId2") Integer uploadId2) {
+        return accountService.compareLists(uploadId1, uploadId2);
     }
 }

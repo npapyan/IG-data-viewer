@@ -18,11 +18,11 @@ public class AccountService {
     @Autowired
     private UploadRepository uploadRepository;
 
-        public List<Account> getUserListByUploadId(Integer uploadId, String uploadType) {
+        public List<Account> getUserListByUploadId(Integer uploadId) {
             return accountRepository.findByupload(uploadRepository.findOneByuploadId(uploadId));
         }
 
-        public List<String> compareLists(Integer uploadId1, String uploadType1, Integer uploadId2, String uploadType2) {
+        public List<String> compareLists(Integer uploadId1, Integer uploadId2) {
             List<String> list1 = new ArrayList();
             List<String> list2 = new ArrayList();
             List<Account> accountList1 = accountRepository.findByupload(uploadRepository.findOneByuploadId(uploadId1));
