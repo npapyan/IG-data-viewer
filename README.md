@@ -19,7 +19,7 @@ So if you want to get the entire list of followers in the html template, you wil
 1. Java depdencies are handled by maven so when importing the code, make sure maven is specified
 2. A Posgresql database is required for this project to work since it stores the names of people within the uploaded files.
 
-### Configure Database Connection
+#### Configure Database Connection
 1. Open src/main/resources/application.properties
 2. Set the following properties to your databse config:
 spring.datasource.url=jdbc:postgresql://url-to-db
