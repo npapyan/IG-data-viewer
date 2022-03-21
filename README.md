@@ -1,7 +1,16 @@
 # About
-A web application made to display some basic instagram statistics based on uploaded data.
+A web application made to display some basic instagram statistics based on uploaded follower/following data.
+The application parses uploaded html text from instagrams web application and saves the contents to a database.
+Then using the data within the databse, comparisons can be made depending on which dataset is selected.
+
+### Features:
+1. See who follows you that doesn't follow you back
+2. Swapping datasets can reveal the opposite comparison: Who follows you that you don't follow back.
+3. Selecting both datasets of the same type (follower or following) will reveal history based on the dates. This can imply various statistics like who may have changed their name or disabled their account since the first selected dataset's date.
 
 Back-end is made with Java while Angular is used for the front-end interface.
+
+# How to upload data
 
 This application accepts a text upload file with html contents of a list of users
 
